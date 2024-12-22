@@ -5,6 +5,7 @@ import Login from "./components/user/Login";
 import Nav from "./components/user/Navbar";
 import Menu from "./components/user/Menu";
 import ProtectedRoutes from "./ProtectedRoutes";
+import AdminRoutes from "./AdminRoutes";
 import Product from "./components/user/Product";
 import Cart from "./components/user/Cart";
 import Profile from "./components/user/Profile";
@@ -12,7 +13,6 @@ import OrderTracker from "./components/user/OrderTracker";
 import Orders from "./components/admin/Orders";
 import CreateProduct from "./components/admin/CreateProduct";
 import UpdateProduct from "./components/admin/UpdateProduct";
-import AdminRoutes from "./AdminRoutes";
 
 function App() {
   return (
