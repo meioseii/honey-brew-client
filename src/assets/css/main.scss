@@ -1,0 +1,74 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --bs-body-font-family: "Poppins";
+  --bs-focus-ring-color: #748cab;
+  --bs-tertiary-bg-rgb: 29, 45, 68;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-body-bg: #f0ebd8;
+  --bs-border-color: #1d2d44;
+  --bs-link-color: red;
+  --bs-primary-bg-subtle: #1d2d44;
+  --bs-primary-text-emphasis: #ffc300;
+}
+
+.fixed-responsive-img {
+  width: 600px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  object-fit: cover; /* Ensures the image content scales without distortion */
+  max-width: 100%; /* Prevents overflow */
+  border-radius: 10px;
+}
+
+.input-disabled:focus {
+  border-color: #748cab;
+  box-shadow: none;
+}
+.btn-qt {
+  text-decoration: none;
+  color: #1d2d44;
+}
+
+.see-details {
+  color: #748cab;
+}
+.see-details:hover {
+  color: #1d2d44;
+}
+
+#contact-number {
+  border-color: #748cab;
+  background-color: #1d2d44;
+  color: #ffc300;
+}
+* {
+  border: px solid red;
+}
+
+.d-flex .gap-3 {
+  border: px solid red;
+}
+
+.navbar-toggler {
+  background-color: #ffc300;
+}
+.btn-primary {
+  background-color: #1d2d44;
+  border-color: #1d2d44;
+  --bs-btn-hover-bg: #3e5c76;
+  --bs-btn-hover-border-color: #3e5c76;
+  --bs-btn-active-bg: #1d2d44;
+  --bs-btn-active-border-color: #1d2d44;
+  --bs-btn-disabled-bg: #3e5c76;
+  --bs-btn-disabled-color: #fff;
+}
+
+.rounded-0 {
+  border-color: #748cab;
+}
+
+.brand-title {
+  color: #ffc300;
+}
