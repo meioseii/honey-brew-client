@@ -15,7 +15,7 @@ const SideNav = () => {
     <Sidebar>
       <Menu>
         {categories.map((category) => {
-          const categoryPath = `/honey-brew-client/#/menu/${category.name
+          const categoryPath = `/menu/${category.name
             .replace(/\s+/g, "-")
             .toLowerCase()}`;
           const isActive = location.pathname === categoryPath;

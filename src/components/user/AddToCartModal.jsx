@@ -23,18 +23,10 @@ const AddToCartModal = (props) => {
         </div>
         <p className="fw-bold">₱{productData.price * productData.quantity}</p>
         <div className="d-flex justify-content-around">
-          <Button
-            as={Link}
-            to={`/honey-brew-client/#/menu/espresso`}
-            onClick={props.onHide}
-          >
+          <Button as={Link} to={`/menu/espresso`} onClick={props.onHide}>
             Order More
           </Button>
-          <Button
-            as={Link}
-            to={`/honey-brew-client/#/cart`}
-            onClick={props.onHide}
-          >
+          <Button as={Link} to={`/cart`} onClick={props.onHide}>
             Check Out
           </Button>
         </div>

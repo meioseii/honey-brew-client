@@ -6,6 +6,7 @@ const useMenuStore = create((set) => ({
   selectedMenuItem: null,
   isLoading: false,
   errorMessage: null,
+  message: "",
   fetchMenuProductsByCategory: async (category) => {
     try {
       set({ isLoading: true });
@@ -115,7 +116,7 @@ const useMenuStore = create((set) => ({
       set({ isLoading: false });
     }
   },
-  updateMenuProduct: async (data, id) => {
+  updateMenuProduct: async (data, id, navigate) => {
     set({ isLoading: true });
 
     try {
@@ -135,6 +136,8 @@ const useMenuStore = create((set) => ({
       if (!response.ok) {
         throw new Error("Failed to update menu product.");
       }
+      set({ message: "Product updated successfully." });
+      navigate("/menu/espresso");
     } catch (error) {
       console.error("Error updating menu product:", error.message);
       set({

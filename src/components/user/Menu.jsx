@@ -66,9 +66,9 @@ const Menu = () => {
                       as={Link}
                       to={
                         isAdmin
-                          ? `/honey-brew-client/#/admin/products/${category}/${item._id}`
+                          ? `/admin/products/${category}/${item._id}`
                           : isLoggedIn
-                          ? `/honey-brew-client/#/menu/${category}/${item._id}`
+                          ? `/menu/${category}/${item._id}`
                           : "/"
                       }
                       variant="primary"

@@ -21,7 +21,7 @@ const TopNav = () => {
       <Container>
         <Navbar.Brand
           as={Link}
-          to={isLoggedIn ? "/honey-brew-client/#/menu/espresso" : "/"}
+          to={isLoggedIn ? "/menu/espresso" : "/"}
           className="fw-bolder fs-2"
         >
           <span className="brand-title">HONEY</span> BREW
@@ -35,13 +35,13 @@ const TopNav = () => {
           >
             {isLoggedIn && !isAdmin && (
               <>
-                <Nav.Link as={Link} to={"/honey-brew-client/#/cart"}>
+                <Nav.Link as={Link} to={"/cart"}>
                   Cart
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/honey-brew-client/#/profile"}>
+                <Nav.Link as={Link} to={"/profile"}>
                   Profile
                 </Nav.Link>
-                <Nav.Link as={Link} to={"/honey-brew-client/#/order-tracker"}>
+                <Nav.Link as={Link} to={"/order-tracker"}>
                   Order Tracker
                 </Nav.Link>
               </>
@@ -49,44 +49,44 @@ const TopNav = () => {
 
             {isLoggedIn && isAdmin && (
               <>
-                <Nav.Link as={Link} to={"/honey-brew-client/#/profile"}>
+                <Nav.Link as={Link} to={"/profile"}>
                   Profile
                 </Nav.Link>
                 <NavDropdown title="Orders" id="navbarScrollingDropdown">
                   <NavDropdown.Item
                     as={Link}
-                    to={`/honey-brew-client/#/admin/orders?status=Confirmed`}
+                    to={`/admin/orders?status=Confirmed`}
                   >
                     Confirmed
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    to={`/honey-brew-client/#/admin/orders?status=Preparing`}
+                    to={`/admin/orders?status=Preparing`}
                   >
                     Preparing
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    to={`/honey-brew-client/#/admin/orders?status=In%20Transit`}
+                    to={`/admin/orders?status=In%20Transit`}
                   >
                     In Transit
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    to={`/honey-brew-client/#/admin/orders?status=Completed`}
+                    to={`/admin/orders?status=Completed`}
                   >
                     Completed
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link as={Link} to={"/honey-brew-client/#/admin/products"}>
+                <Nav.Link as={Link} to={"/admin/products"}>
                   Add Product
                 </Nav.Link>
               </>
             )}
             <NavDropdown title="Menu" id="navbarScrollingDropdown">
               {categories.map((category) => {
-                const categoryPath = `/honey-brew-client/#/menu/${category.name
+                const categoryPath = `/menu/${category.name
                   .replace(/\s+/g, "-")
                   .toLowerCase()}`;
 
@@ -104,13 +104,13 @@ const TopNav = () => {
             {isLoggedIn ? (
               <Nav.Link
                 as={Link}
-                to={"/honey-brew-client/#/"}
+                to={"/"}
                 onClick={() => handleLogout(navigate)}
               >
                 Logout
               </Nav.Link>
             ) : (
-              <Nav.Link as={Link} to={"/honey-brew-client/#/"}>
+              <Nav.Link as={Link} to={"/"}>
                 Login
               </Nav.Link>
             )}

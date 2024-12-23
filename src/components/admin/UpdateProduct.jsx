@@ -13,6 +13,7 @@ const UpdateProduct = () => {
     fetchMenuCategories,
     updateMenuProduct,
     deleteMenuProduct,
+    message,
   } = useMenuStore();
   const { id, category } = useParams();
   const [variations, setVariations] = useState([]);
@@ -76,7 +77,7 @@ const UpdateProduct = () => {
         ...(isDrink ? {} : { price: data.price }),
       };
 
-      updateMenuProduct(payload, id);
+      updateMenuProduct(payload, id, navigate);
     } catch (error) {
       console.error("Error converting file to base64:", error);
     }
@@ -351,6 +352,11 @@ const UpdateProduct = () => {
             </button>
           </Col>
         </Row>
+        {message && (
+          <div className="alert alert-primary mt-3" role="alert">
+            {message}
+          </div>
+        )}
       </Form>
     </Container>
   );

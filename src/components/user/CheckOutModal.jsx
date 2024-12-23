@@ -20,11 +20,7 @@ const CheckOutModal = (props) => {
         <div className="fw-light">Thank you for ordering!</div>
 
         <div className="d-flex justify-content-around mt-3">
-          <Button
-            as={Link}
-            to={`/honey-brew-client/#/order-tracker`}
-            onClick={props.onHide}
-          >
+          <Button as={Link} to={`/order-tracker`} onClick={props.onHide}>
             Track Order
           </Button>
         </div>

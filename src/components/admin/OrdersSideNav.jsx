@@ -17,9 +17,7 @@ const OrdersSideNav = () => {
           return (
             <MenuItem
               key={index}
-              component={
-                <Link to={`/honey-brew-client/#/admin/orders${statusQuery}`} />
-              }
+              component={<Link to={`/admin/orders${statusQuery}`} />}
               style={{
                 textTransform: "capitalize",
                 backgroundColor: isActive ? "#1d2d44" : "#fff",
