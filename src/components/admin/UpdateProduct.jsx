@@ -338,7 +338,17 @@ const UpdateProduct = () => {
             <Col lg={2} sm={0}></Col>
           </Row>
         )}
-
+        <Row>
+          <Col lg={2} sm={0}></Col>
+          <Col>
+            {message && (
+              <div className="alert alert-primary mt-3" role="alert">
+                {message}
+              </div>
+            )}
+          </Col>
+          <Col lg={2} sm={0}></Col>
+        </Row>
         <Row>
           <Col className="d-flex justify-content-center gap-5 my-4">
             <button
@@ -352,11 +362,6 @@ const UpdateProduct = () => {
             </button>
           </Col>
         </Row>
-        {message && (
-          <div className="alert alert-primary mt-3" role="alert">
-            {message}
-          </div>
-        )}
       </Form>
     </Container>
   );
