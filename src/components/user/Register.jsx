@@ -97,6 +97,7 @@ const Register = () => {
                 <Form.Control
                   {...register("password", {
                     required: "Password is required",
+                    minLength: 8,
                   })}
                   className="rounded-0 focus-ring"
                   type="password"
@@ -134,7 +135,6 @@ const Register = () => {
                 <Form.Control
                   {...register("streetAddress", {
                     required: "Street Address is required",
-                    minLength: 8,
                   })}
                   className="rounded-0 focus-ring"
                   type="text"
