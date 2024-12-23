@@ -275,7 +275,7 @@ const UpdateProduct = () => {
                         placeholder="Hot Price"
                         type="number"
                         value={variation.priceHot}
-                        disabled={selectedMenuItem.drinkType === "Frappe"}
+                        disabled={drinkType === "Frappe"}
                         onChange={(e) =>
                           handleVariationChange(
                             index,
