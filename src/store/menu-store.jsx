@@ -109,8 +109,8 @@ const useMenuStore = create((set) => ({
         menu: [...state.menu, data.menu],
         errorMessage: null,
       }));
-      set({ message: "Product updated successfully." });
-      setTimeout(() => set({ message: "Product created successfully!" }), 1500);
+      set({ message: "Product created successfully!" });
+      setTimeout(() => set({ message: "" }), 1500);
       setTimeout(() => navigate("/menu/espresso"), 2000);
     } catch (error) {
       console.error("Error adding menu product:", error.message);
