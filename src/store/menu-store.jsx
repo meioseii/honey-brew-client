@@ -86,7 +86,7 @@ const useMenuStore = create((set) => ({
       set({ isLoading: false });
     }
   },
-  addMenuProduct: async (productData) => {
+  addMenuProduct: async (productData, navigate) => {
     set({ isLoading: true });
     try {
       const token = localStorage.getItem("token");
@@ -109,6 +109,9 @@ const useMenuStore = create((set) => ({
         menu: [...state.menu, data.menu],
         errorMessage: null,
       }));
+      set({ message: "Product updated successfully." });
+      setTimeout(() => set({ message: "" }), 1500);
+      setTimeout(() => navigate("/menu/espresso"), 2000);
     } catch (error) {
       console.error("Error adding menu product:", error.message);
       set({ errorMessage: "An error occurred while adding the menu product." });

@@ -3,14 +3,20 @@ import { useForm } from "react-hook-form";
 import useMenuStore from "../../store/menu-store";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
+import { useNavigate } from "react-router-dom";
 
 const CreateProduct = () => {
-  const { fetchMenuCategories, categories, isLoading, addMenuProduct } =
-    useMenuStore();
+  const {
+    fetchMenuCategories,
+    categories,
+    isLoading,
+    addMenuProduct,
+    message,
+  } = useMenuStore();
   const [variations, setVariations] = useState([
     { size: "", priceHot: "", priceIced: "" },
   ]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetchMenuCategories();
   }, [fetchMenuCategories]);
@@ -47,7 +53,7 @@ const CreateProduct = () => {
         ...(isDrink ? {} : { price: data.price }),
       };
 
-      addMenuProduct(payload);
+      addMenuProduct(payload, navigate);
     } catch (error) {
       console.error("Error converting file to base64:", error);
     }
@@ -319,6 +325,18 @@ const CreateProduct = () => {
             <Col lg={2} sm={0}></Col>
           </Row>
         )}
+
+        <Row>
+          <Col lg={2} sm={0}></Col>
+          <Col>
+            {message && (
+              <div className="alert alert-primary mt-3" role="alert">
+                {message}
+              </div>
+            )}
+          </Col>
+          <Col lg={2} sm={0}></Col>
+        </Row>
 
         <Row>
           <Col className="d-flex justify-content-center mt-4">
