@@ -112,6 +112,7 @@ const Register = () => {
                 <Form.Control
                   {...register("confirmPassword", {
                     required: "Confirm Password is required",
+                    minLength: 8,
                     validate: (value) =>
                       value === password || "Passwords do not match",
                   })}
@@ -133,6 +134,7 @@ const Register = () => {
                 <Form.Control
                   {...register("streetAddress", {
                     required: "Street Address is required",
+                    minLength: 8,
                   })}
                   className="rounded-0 focus-ring"
                   type="text"
