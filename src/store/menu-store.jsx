@@ -137,7 +137,8 @@ const useMenuStore = create((set) => ({
         throw new Error("Failed to update menu product.");
       }
       set({ message: "Product updated successfully." });
-      navigate("/menu/espresso");
+      setTimeout(() => set({ message: "" }), 1500);
+      setTimeout(() => navigate("/menu/espresso"), 2000);
     } catch (error) {
       console.error("Error updating menu product:", error.message);
       set({
